@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutRegistro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".RegistroActividadActivity">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Registro de Actividad Física"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Tipo de Actividad -->
+    <TextView
+        android:id="@+id/tvTipoActividad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de actividad:"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerActividad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvTipoActividad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:entries="@array/tipos_actividad"
+        android:layout_marginTop="4dp"
+        android:spinnerMode="dropdown" />
+
+    <!-- Duración -->
+    <TextView
+        android:id="@+id/tvDuracion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duración (minutos):"
+        app:layout_constraintTop_toBottomOf="@id/spinnerActividad"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/etDuracion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Ejemplo: 30"
+        app:layout_constraintTop_toBottomOf="@id/tvDuracion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp" />
+
+    <!-- Intensidad -->
+    <TextView
+        android:id="@+id/tvIntensidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Intensidad:"
+        app:layout_constraintTop_toBottomOf="@id/etDuracion"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <RadioGroup
+        android:id="@+id/rgIntensidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvIntensidad"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbBaja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Baja" />
+
+        <RadioButton
+            android:id="@+id/rbMedia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Media" />
+
+        <RadioButton
+            android:id="@+id/rbAlta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alta" />
+    </RadioGroup>
+
+    <!-- Botón Calcular -->
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Calcular Calorías"
+        app:layout_constraintTop_toBottomOf="@id/rgIntensidad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- Resultado -->
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Calorías quemadas: -"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/btnCalcular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    t>
